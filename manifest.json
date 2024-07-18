@@ -1,15 +1,16 @@
 {
   "manifest_version": 2,
-  "name": "CSP Disabler Made By DragonX",
+  "name": "CSP Disabler",
   "version": "1.0",
   "permissions": [
     "webRequest",
     "webRequestBlocking",
-    "activeTab"
+    "activeTab",
+    "<all_urls>"
   ],
   "background": {
     "scripts": ["background.js"],
-    "persistent": false
+    "persistent": true
   },
   "browser_action": {
     "default_popup": "popup.html",
