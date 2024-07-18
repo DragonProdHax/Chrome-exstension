@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Website Redirector</title>
-  <script src="popup.js"></script>
+  <style>
+    body {
+      width: 200px;
+      height: 100px;
+      font-family: Arial, sans-serif;
+      padding: 10px;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Redirect to a Website</h1>
-  <p>Do you want to go to the website?</p>
-  <button id="goButton">Go to Website</button>
-  <button id="stayButton">Stay Here</button>
+  <label>
+    <input type="checkbox" id="toggleCSP">
+    Enable CSP Disabler
+  </label>
+  <script src="popup.js"></script>
 </body>
 </html>
