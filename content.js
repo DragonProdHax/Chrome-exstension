@@ -1,6 +1,2 @@
-chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
-    if (message.action === "openPopup") {
-      chrome.runtime.sendMessage({ action: "openPopup" });
-    }
-  });
-  
+// content.js
+// This script intentionally left blank for now, can be used for additional logic if needed.
