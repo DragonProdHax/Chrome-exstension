@@ -1,12 +1,15 @@
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("goButton").addEventListener("click", function() {
-      chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-        chrome.tabs.update(tabs[0].id, { url: "https://enderandsam.github.io/r" });
-      });
-    });
-  
-    document.getElementById("stayButton").addEventListener("click", function() {
-      window.close(); // Close the popup
+// popup.js
+
+document.addEventListener('DOMContentLoaded', function () {
+  const toggleCSP = document.getElementById('toggleCSP');
+
+  chrome.storage.sync.get(['cspEnabled'], function (result) {
+    toggleCSP.checked = result.cspEnabled;
+  });
+
+  toggleCSP.addEventListener('change', function () {
+    chrome.storage.sync.set({ cspEnabled: toggleCSP.checked }, function () {
+      console.log('CSP Disabler is ' + (toggleCSP.checked ? 'enabled' : 'disabled'));
     });
   });
-  
+});
